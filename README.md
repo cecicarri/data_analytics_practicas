@@ -44,13 +44,14 @@ La base de datos Ventas_Tech_DB está compuesta por cinco tablas principales:
 
 ### Estructura del repositorio
 
+```text
 data_analytics_practicas/
-
 │
-
-│── README.md
-
+├── README.md
 └── RetailPro_M3.sql
+```
+
+
 
 ### Entregas del proyecto
 
