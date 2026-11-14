@@ -45,27 +45,21 @@ La base de datos Ventas_Tech_DB está compuesta por cinco tablas principales:
 ### Estructura del repositorio
 
 data_analytics_practicas/
+
 │
-├── README.md
+
+│── README.md
+
 └── RetailPro_M3.sql
 
 ### Entregas del proyecto
 
-Módulos
+| Módulo | Contenido |
+|---|---|
+| M1 | Brief analítico y definición del problema |
+| M2 | Diseño del modelo relacional y normalización |
+| M3 | Creación de la base de datos y carga inicial de datos (DDL + DML)|
 
-Contenido
-
-M1
-
-Brief analítico y definición del problema de negocio
-
-M2
-
-Diseño del modelo relacional y normalización
-
-M3
-
-Creación de la base de datos y carga inicial de datos (DDL + DML)
 
 ### Base de datos
 
@@ -81,7 +75,7 @@ El script RetailPro_M3.sql contiene:
 
 - Consultas de validación de registros y relaciones.
 
-Los datos utilizados son ficticios y tienen fines exclusivamente académicos para la Comision 91065 de CoderHouse
+Los datos utilizados son ficticios y tienen fines exclusivamente académicos para la Comision 91065 - CoderHouse
 
 ### Estado del proyecto
 
