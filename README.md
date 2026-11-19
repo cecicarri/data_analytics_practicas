@@ -1,83 +1,90 @@
-# **RetailPro – Proyecto de Análisis de Datos**
+# RetailPro | Proyecto de Análisis de Datos
 
 ## Descripción del proyecto
 
-RetailPro es un proyecto académico de análisis de datos desarrollado sobre el caso de una empresa distribuidora de tecnología.
+RetailPro es un proyecto académico de análisis de datos aplicado a una distribuidora de tecnología. Su objetivo es transformar información de ventas, clientes, productos y categorías en indicadores que permitan comprender el desempeño comercial y acompañar la toma de decisiones.
 
-El objetivo es organizar y analizar información comercial para identificar patrones de ventas, conocer el comportamiento de los clientes y los productos, y generar información útil para la toma de decisiones.
+El trabajo se desarrolla en distintas etapas: diseño de la base de datos, consultas SQL, integración de tablas, transformación de datos y construcción de un modelo analítico en Power BI.
 
-### Objetivos del proyecto
+## Objetivos
 
-- Diseñar un modelo de datos relacional.
-
-- Crear y normalizar una base de datos utilizando SQL Server.
-
-- Analizar ventas, clientes, productos y territorios.
-
-- Identificar indicadores clave de desempeño (KPIs).
-
-- Desarrollar consultas SQL para responder preguntas de negocio.
-
-- Construir un dashboard para visualizar los resultados.
+- Analizar la facturación y la cantidad de pedidos.
+- Identificar los productos con mayor facturación y volumen de ventas.
+- Explorar el comportamiento de las ventas por período, cliente y categoría.
+- Integrar información de distintas tablas mediante consultas SQL.
+- Preparar y transformar los datos para su análisis.
+- Construir indicadores y visualizaciones para apoyar decisiones comerciales.
 
 ## Herramientas utilizadas
 
-- SQL Server: creación y administración de la base de datos.
+- **Microsoft SQL Server:** creación y administración de la base de datos.
+- **SQL Server Management Studio (SSMS):** ejecución y validación de consultas SQL.
+- **Power BI Desktop:** modelado y visualización de los datos.
+- **Power Query:** limpieza y transformación de información.
+- **DAX:** creación de medidas e indicadores.
+- **GitHub:** almacenamiento, control de versiones y documentación del proyecto.
 
-- SQL Server Management Studio (SSMS): ejecución de scripts y consultas SQL.
-
-- GitHub: almacenamiento y documentación del proyecto.
-
-## Modelo de datos
-
-La base de datos Ventas_Tech_DB está compuesta por cinco tablas principales:
-
-- Clientes: información de los clientes y sus segmentos.
-
-- Categorías: clasificación de los productos.
-
-- Productos: descripción, precio y costo de los productos.
-
-- Territorios: información geográfica de las ventas.
-
-- Ventas: registro de operaciones comerciales.
-
-### Estructura del repositorio
+## Estructura del repositorio
 
 ```text
 data_analytics_practicas/
-│
-├── README.md
-└── RetailPro_M3.sql
+├── ventas_tech_db.sql
+├── m4_consultas_negocio.sql
+├── m5_consultas_joins.sql
+└── README.md
 ```
 
+## Archivos SQL
 
-
-### Entregas del proyecto
-
-| Módulo | Contenido |
+| Archivo | Descripción |
 |---|---|
-| M1 | Brief analítico y definición del problema |
-| M2 | Diseño del modelo relacional y normalización |
-| M3 | Creación de la base de datos y carga inicial de datos (DDL + DML)|
+| `ventas_tech_db.sql` | Crea la base `Ventas_Tech_DB`, define las tablas, claves y relaciones, e incorpora los datos iniciales. |
+| `m4_consultas_negocio.sql` | Contiene consultas de análisis comercial: resumen mensual, ranking de productos, clientes recurrentes y comparación de productos contra el promedio. |
+| `m5_consultas_joins.sql` | Incluye consultas con `INNER JOIN`, `LEFT JOIN` y `UNION ALL` para integrar información de ventas, clientes, productos y categorías. |
 
+## Cómo ejecutar los scripts SQL
 
-### Base de datos
+1. Abrir SQL Server Management Studio (SSMS).
+2. Conectarse a una instancia de Microsoft SQL Server.
+3. Abrir y ejecutar `ventas_tech_db.sql` para crear la base de datos y cargar las tablas con sus registros iniciales.
+4. Abrir `m4_consultas_negocio.sql` y ejecutar las consultas de análisis comercial.
+5. Abrir `m5_consultas_joins.sql` y ejecutar las consultas que relacionan las distintas tablas.
+6. Revisar los resultados obtenidos en cada consulta.
 
-El script RetailPro_M3.sql contiene:
+**Importante:** ejecutar primero el script de creación de la base de datos. Los scripts M4 y M5 dependen de las tablas creadas en esa etapa.
 
-- Creación de la base de datos Ventas_Tech_DB.
+## Modelo analítico en Power BI
 
-- Creación de las cinco tablas.
+El modelo utiliza una tabla de hechos y dimensiones relacionadas:
 
-- Definición de claves primarias y foráneas.
+- `Fact_Ventas`: información de las transacciones.
+- `Dim_Clientes`: datos de clientes.
+- `Dim_Productos`: información de productos.
+- `Dim_Categorias`: clasificación de productos.
+- `Dim_Fechas`: calendario para el análisis temporal.
 
-- Carga de datos iniciales de ejemplo.
+Se definieron relaciones activas de uno a varios (1:N) y medidas DAX para analizar la facturación, las ventas del canal online y las comparaciones entre períodos.
 
-- Consultas de validación de registros y relaciones.
+### Medidas principales
 
-Los datos utilizados son ficticios y tienen fines exclusivamente académicos para la Comision 91065 - CoderHouse
+- `Total Ventas`
+- `Ventas Online`
+- `Ventas YTD`
+- `Ventas LY`
+- `% Crecimiento Anual`
 
-### Estado del proyecto
+## Resultados y alcance
 
-Proyecto en desarrollo, correspondiente a una formación en Data Analytics. Se irá ampliando progresivamente con nuevos ejercicios, consultas y herramientas de análisis.
+Las consultas SQL permiten obtener indicadores de facturación, pedidos, ticket promedio y participación de productos.
+
+Los resultados numéricos incluidos en las prácticas corresponden al conjunto de datos de prueba utilizado en cada etapa. Por lo tanto, sirven para validar las consultas y explorar el modelo, pero no deben interpretarse como tendencias históricas del negocio.
+
+## Uso de inteligencia artificial
+
+Se utilizó inteligencia artificial como herramienta de apoyo para revisar consultas SQL, proponer hallazgos comerciales y generar documentación técnica.
+
+Las sugerencias fueron evaluadas críticamente y contrastadas con la estructura de las consultas y los resultados obtenidos. La validación final y las decisiones de implementación se realizaron considerando el criterio analítico del proyecto.
+
+## Estado del proyecto
+
+Proyecto académico desarrollado progresivamente como parte de la formación en análisis de datos. El repositorio reúne los scripts SQL y la documentación de las distintas etapas de RetailPro.
